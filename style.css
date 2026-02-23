@@ -9,12 +9,16 @@
     --completed-badge-text: #0a2538;
 }
 
+/* ============================= */
+/* Base Layout */
+/* ============================= */
 body {
     margin: 0;
     font-family: 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
 }
 
 header {
@@ -32,9 +36,12 @@ header h1 {
 header p {
     font-size: 1rem;
     color: #ccc;
+    margin-top: 0.5rem;
 }
 
+/* ============================= */
 /* Hall of Fame Stats */
+/* ============================= */
 .hof-stats {
     display: flex;
     justify-content: center;
@@ -44,27 +51,31 @@ header p {
     color: #ccc;
 }
 
-/* Hall of Fame Container */
+/* ============================= */
+/* Hall of Fame Grid */
+/* ============================= */
 .hof-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* auto-fit fixes first-card shift */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
     max-width: 1200px;
     margin: auto;
-    justify-items: center; /* centers cards in their grid cells */
+    justify-items: center;
     align-items: start;
 }
 
+/* ============================= */
 /* Individual Card */
+/* ============================= */
 .hof-card {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 10px;
-    padding: 1rem;
+    padding: 1.25rem 1rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 230px; /* keeps cards uniform height */
+    min-height: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,30 +86,31 @@ header p {
     box-shadow: 0 0 15px var(--accent-color);
 }
 
-/* Avatar Images & Canvas */
 .hof-card img,
 .hof-card canvas {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
-/* Name & Platform */
 .hof-card .user-handle {
     font-weight: bold;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 .hof-card .user-platform {
     font-size: 0.9rem;
     color: #ccc;
+    margin-bottom: 0.6rem;
 }
 
-/* Progress Section & Badges */
+/* ============================= */
+/* Progress Section */
+/* ============================= */
 .progress-section {
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     width: 100%;
 }
 
@@ -107,7 +119,7 @@ header p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .gen-badge {
@@ -126,16 +138,15 @@ header p {
     border: none;
 }
 
-/* Master Card */
 .hof-card.master {
     border: 3px solid var(--completed-badge-bg);
-    box-shadow: 0 0 10px var(--completed-badge-bg);
+    box-shadow: 0 0 12px var(--completed-badge-bg);
 }
 
-/* Total Progress */
 .total-progress {
     font-size: 0.85rem;
     color: #ccc;
+    margin-top: 6px;
 }
 
 .full-complete {
@@ -143,13 +154,16 @@ header p {
     font-weight: bold;
 }
 
+/* ============================= */
 /* Footer */
+/* ============================= */
 .site-footer {
     background-color: var(--card-bg);
     color: var(--text-color);
     text-align: center;
-    padding: 1rem;
+    padding: 1.25rem;
     border-top: 1px solid var(--card-border);
+    margin-top: 2rem;
 }
 
 .site-footer a {
@@ -161,9 +175,12 @@ header p {
     text-decoration: underline;
 }
 
+/* ============================= */
+/* Verification Section */
+/* ============================= */
 .verification-toggle {
     max-width: 800px;
-    margin: 1.5rem auto;
+    margin: 2rem auto;
     padding: 0 1rem;
 }
 
@@ -172,11 +189,21 @@ header p {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     color: var(--accent-color);
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     text-align: left;
+    transition: background 0.3s ease;
+
+    /* Sticky by default */
+    position: sticky;
+    top: 1rem;
+    z-index: 20;
+}
+
+.verification-btn:hover {
+    background: #242424;
 }
 
 .verification-content {
@@ -184,24 +211,52 @@ header p {
     border: 1px solid var(--card-border);
     border-top: none;
     border-radius: 0 0 8px 8px;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.3s ease;
 }
 
 .verification-content.open {
-    max-height: 1000px; /* must be larger than content */
-    padding: 1rem;
+    max-height: 1200px;
+    padding: 1.5rem;
 }
 
+/* Remove sticky when open (via JS toggle) */
+.verification-toggle.opened .verification-btn {
+    position: static;
+}
+
+/* Content Spacing */
+.verification-content p {
+    margin: 0.5rem 0 1rem 0;
+}
+
+.verification-content ol {
+    padding-left: 1.2rem;
+}
+
+.verification-content ol > li {
+    margin-bottom: 1.75rem;
+}
+
+.verification-content ul {
+    margin-top: 0.75rem;
+    padding-left: 1.2rem;
+}
+
+.verification-content ul li {
+    margin-bottom: 0.4rem;
+}
+
+/* Email Box */
 .email-copy-wrapper {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-top: 6px;
-    background: var(--card-bg);
-    padding: 6px 10px;
+    margin-top: 8px;
+    background: #242424;
+    padding: 8px 12px;
     border-radius: 6px;
     border: 1px solid var(--card-border);
 }
@@ -222,17 +277,77 @@ header p {
     opacity: 0.8;
 }
 
+/* Shop Button */
 .bmac-btn {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #ffcc00;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1.1rem;
+    background-color: var(--accent-color);
     color: #121212;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .bmac-btn:hover {
     background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* Submission List */
+.submission-list li {
+    margin-bottom: 1rem;
+}
+
+.submission-list strong {
+    color: var(--accent-color);
+}
+
+/* Footer Social Icons */
+.site-footer .footer-content a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem;
+    border-radius: 50%;
+    background-color: rgba(255, 204, 0, 0.1);
+    margin: 0.3rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.site-footer .footer-content a img {
+    width: 50px; /* Bigger icons */
+    height: 50px;
+}
+
+.site-footer .footer-content a:hover {
+    background-color: #0a2538;
+    transform: scale(1.1);
+}
+
+/* ============================= */
+/* Responsive / Mobile */
+/* ============================= */
+@media (max-width: 600px) {
+    .verification-content.open {
+        max-height: none;
+        overflow: visible;
+        padding: 1rem;
+    }
+
+    .site-footer .footer-content a img {
+        width: 40px;
+        height: 40px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .hof-card img,
+    .hof-card canvas {
+        width: 80px;
+        height: 80px;
+    }
 }
