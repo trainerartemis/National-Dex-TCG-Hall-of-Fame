@@ -19,60 +19,92 @@
     </div>
 
     <section class="verification-toggle">
-    <button class="verification-btn">
-        <strong><span class="lock-icon">🔒</span> How to Get Verified & Join the Hall of Fame</strong>
-    </button>
+        <button class="verification-btn">
+            <strong><span class="lock-icon">🔒</span> How to Get Verified & Join the Hall of Fame</strong>
+        </button>
 
-    <div class="verification-content">
-        <p><em>Verification ensures authenticity and protects the integrity of the Hall of Fame.</em></p>
+        <div class="verification-content">
+            <p class="intro">
+                <em>Verification ensures authenticity and protects the integrity of the Hall of Fame.</em>
+            </p>
 
-        <ol>
-            <li>
-                <strong>Purchase a Verification Package</strong><br>
-                Click the button below and scroll down to the shop section to select your package:
-                
-                <ul><br>
-                    <li>1 Single Generation Verification for $15</li>
-                    <li>Full Verification for $50</li>
-                </ul>
-            </li><br>
+            <ol class="verification-steps">
+                <li>
+                    <strong>Purchase a Verification Package</strong>
+                    <p>Click the button below and scroll down to the shop section to select your package:</p>
+                    <ul class="package-list">
+                        <li>1 Single Generation Verification for $15</li>
+                        <li>Full Verification for $50</li>
+                    </ul>
+                    <div class="shop-btn-wrapper">
+                        <a href="https://buymeacoffee.com/trainerartemis" target="_blank" rel="noopener noreferrer" class="bmac-btn">
+                            ☕ Go to Shop
+                        </a>
+                    </div>
+                </li>
 
-            <div style="margin: 0.5rem 0;">
-                    <a href="https://buymeacoffee.com/trainerartemis" class="bmac-btn">☕ Go to Shop</a>
-                </div><br>
+                <li>
+                    <strong>Email Your Submission</strong>
+                    <p>Send your proof to:</p>
+                    <div class="email-copy-wrapper">
+                        <span id="verificationEmail">
+                            verifynatdextcgbindertoday@gmail.com
+                        </span>
+                        <button class="copy-btn" onclick="copyEmail()">Copy</button>
+                    </div>
+                </li>
 
-            <li>
-                <strong>Email Your Submission</strong><br>
-                Send your proof to:<br>
-                <div class="email-copy-wrapper">
-                    <span id="verificationEmail">
-                        verifynatdextcgbindertoday@gmail.com
-                    </span>
-                    <button class="copy-btn" onclick="copyEmail()">Copy</button>
-                </div>
-            </li>
+                <li>
+                    <strong>Include the Following in Your Email (Required for Verification):</strong>
+                    <ul class="submission-list">
+                        <li>
+                            <strong>Your Display Handle (exact spelling)</strong><br>
+                            This is the name that will appear on the Hall of Fame.
+                            It must match exactly — including capitalization, spacing, and symbols.<br>
+                            Display handles must be safe for work (no explicit or inappropriate names).
+                        </li>
+                        <li>
+                            <strong>Platform to Be Listed (optional)</strong><br>
+                            Example: YouTube, Twitch, Instagram, etc.
+                            If provided, it will appear beneath your name on your card.
+                        </li>
+                        <li>
+                            <strong>Photo Proof of Completion (images only)</strong><br>
+                            Submit clear photos showing your completed generation(s).<br>
+                            One per number counts. Variants, shiny, and special editions are all okay.<br>
+                            Your display handle must be visible in every screenshot.<br>
+                            Accepted formats: JPG/JPEG or PNG.<br>
+                            Images must be original and unedited. Videos are not accepted.
+                        </li>
+                        <li>
+                            <strong>Buy Me a Coffee Purchase Receipt</strong><br>
+                            Required to confirm your selected verification package.
+                            Submissions without proof of purchase cannot be processed.
+                        </li>
+                        <li>
+                            <strong>Profile Image (YouTube channel only)</strong><br>
+                            If you provide a YouTube channel link, your profile image will be retrieved from that channel.<br>
+                            If no YouTube channel is provided, your card will display a randomized shape avatar
+                            (as shown in the sample cards).<br>
+                            Profile images must be safe for work.
+                        </li>
+                    </ul>
+                </li>
 
-            <li>
-                <strong>Include in Your Email:</strong>
-                <ul>
-                    <li>Your display handle (exact spelling)</li>
-                    <li>Platform to be listed (optional)</li>
-                    <li>Clear proof of completion (screenshots or video)</li>
-                    <li>Buy Me a Coffee purchase receipt</li>
-                    <li>Optional: profile image & social link</li>
-                </ul>
-            </li>
+                <li>
+                    <strong>Review Process</strong>
+                    <p>
+                        Submissions are manually reviewed.<br>
+                        Processing time: <strong>3–7 days</strong>.
+                    </p>
+                </li>
+            </ol>
 
-            <li>
-                <strong>Review Process</strong><br>
-                Submissions are manually reviewed.<br>
-                Processing time: 3–7 days.
-            </li>
-        </ol>
-
-        <p><em>Incomplete submissions will not be verified.</em></p>
-    </div>
-</section>
+            <p class="warning">
+                <em>Incomplete submissions or missing required items will not be verified.</em>
+            </p>
+        </div>
+    </section>
 
     <main>
         <section class="hof-container" id="hofContainer">
@@ -82,9 +114,42 @@
 
     <footer class="site-footer">
         <div class="footer-content">
-            <span>Want to get verified? ☕ <a href="https://buymeacoffee.com/trainerartemis" target="_blank">Buy Me a Coffee</a></span>
+            <span>
+                Want to be a <strong>Verified Base National Dexer</strong>? ☕ 
+                <a href="https://buymeacoffee.com/trainerartemis" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
+            </span>
             <br>
-            <span>Each verified Base National Dexer gets added to this Hall of Fame!</span>
+            <small>One per number counts. Variants, shiny, and special editions are all okay.</small>
+            <br>
+            <!-- Button to verified collectors page -->
+            <a href="https://trainerartemis.github.io/National-Dex-TCG-Binder-Checklist/" target="_blank" rel="noopener noreferrer" class="check-cards-link">
+                National Dex TCG Binder Checklist
+            </a>
+            <br><br>
+
+            <span>
+                <a href="https://www.youtube.com/@TrainerArtemis" target="_blank" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/YouTube_play_button_circular_%282013-2017%29.svg/960px-YouTube_play_button_circular_%282013-2017%29.svg.png" alt="YouTube" width="20" height="20" />
+                </a>
+                <a href="https://x.com/TrainerArtemis" target="_blank" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X" width="20" height="20" />
+                </a>
+                <a href="https://www.instagram.com/trainer_artemis" target="_blank" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="20" height="20" />
+                </a>
+                <br>
+                <span>
+                    <a href="https://www.tiktok.com/@trainerartemis" target="_blank" rel="noopener noreferrer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Tiktok_icon.svg" alt="Tiktok" width="20" height="20" />
+                    </a>
+                    <a href="https://app.getcollectr.com/showcase/profile/60396cb7-0de2-49fa-9913-a1534cb89d17" target="_blank" rel="noopener noreferrer">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6f/e5/7e/6fe57e38-8ece-35a6-5818-df9b927c0d04/Placeholder.mill/200x200bb-75.webp" alt="Collectr" width="20" height="20" />
+                    </a>
+                    <a href="https://anilist.co/user/TrainerArtemis/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://pbs.twimg.com/media/HBuGpPMWsAAGDl4?format=png&name=900x900" alt="Anime & Manga" width="20" height="20" />
+                    </a>
+                </span>
+            </span>
         </div>
     </footer>
 
