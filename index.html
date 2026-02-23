@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified Base National Dexers Hall of Fame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🏆 Verified Base National Dexers Hall of Fame</h1>
+        <p>Collectors who completed the Base National Dex and had their achievement officially verified!</p>
+    </header>
+
+    <!-- Stats bar, independent of the grid -->
+    <div class="hof-stats" id="hofStats">
+        <span>Total Verified Dexers: 0</span> | 
+        <span>Full National Dex Masters: 0</span>
+    </div>
+
+    <section class="verification-toggle">
+    <button class="verification-btn">
+        <strong><span class="lock-icon">🔒</span> How to Get Verified & Join the Hall of Fame</strong>
+    </button>
+
+    <div class="verification-content">
+        <p><em>Verification ensures authenticity and protects the integrity of the Hall of Fame.</em></p>
+
+        <ol>
+            <li>
+                <strong>Purchase a Verification Package</strong><br>
+                Click the button below and scroll down to the shop section to select your package:
+                
+                <ul><br>
+                    <li>1 Single Generation Verification for $15</li>
+                    <li>Full Verification for $50</li>
+                </ul>
+            </li><br>
+
+            <div style="margin: 0.5rem 0;">
+                    <a href="https://buymeacoffee.com/trainerartemis" class="bmac-btn">☕ Go to Shop</a>
+                </div><br>
+
+            <li>
+                <strong>Email Your Submission</strong><br>
+                Send your proof to:<br>
+                <div class="email-copy-wrapper">
+                    <span id="verificationEmail">
+                        verifynatdextcgbindertoday@gmail.com
+                    </span>
+                    <button class="copy-btn" onclick="copyEmail()">Copy</button>
+                </div>
+            </li>
+
+            <li>
+                <strong>Include in Your Email:</strong>
+                <ul>
+                    <li>Your display handle (exact spelling)</li>
+                    <li>Platform to be listed (optional)</li>
+                    <li>Clear proof of completion (screenshots or video)</li>
+                    <li>Buy Me a Coffee purchase receipt</li>
+                    <li>Optional: profile image & social link</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Review Process</strong><br>
+                Submissions are manually reviewed.<br>
+                Processing time: 3–7 days.
+            </li>
+        </ol>
+
+        <p><em>Incomplete submissions will not be verified.</em></p>
+    </div>
+</section>
+
+    <main>
+        <section class="hof-container" id="hofContainer">
+            <!-- Verified users will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>Want to get verified? ☕ <a href="https://buymeacoffee.com/trainerartemis" target="_blank">Buy Me a Coffee</a></span>
+            <br>
+            <span>Each verified Base National Dexer gets added to this Hall of Fame!</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

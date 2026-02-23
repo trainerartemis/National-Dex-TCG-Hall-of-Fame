@@ -1,0 +1,238 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --accent-color: #ffcc00;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --shadow-color: rgba(0,0,0,0.7);
+    --completed-badge-bg: #01a1f8;
+    --completed-badge-text: #0a2538;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--accent-color);
+    text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+header p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Hall of Fame Stats */
+.hof-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    color: #ccc;
+}
+
+/* Hall of Fame Container */
+.hof-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* auto-fit fixes first-card shift */
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    justify-items: center; /* centers cards in their grid cells */
+    align-items: start;
+}
+
+/* Individual Card */
+.hof-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 230px; /* keeps cards uniform height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hof-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Avatar Images & Canvas */
+.hof-card img,
+.hof-card canvas {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Name & Platform */
+.hof-card .user-handle {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.hof-card .user-platform {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Progress Section & Badges */
+.progress-section {
+    margin-top: 0.8rem;
+    width: 100%;
+}
+
+.gen-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.gen-badge {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: #2a2a2a;
+    color: #666;
+    border: 1px solid #333;
+}
+
+.gen-badge.completed {
+    background-color: var(--completed-badge-bg);
+    color: var(--completed-badge-text);
+    border: none;
+}
+
+/* Master Card */
+.hof-card.master {
+    border: 3px solid var(--completed-badge-bg);
+    box-shadow: 0 0 10px var(--completed-badge-bg);
+}
+
+/* Total Progress */
+.total-progress {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.full-complete {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.site-footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.verification-toggle {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+.verification-btn {
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--accent-color);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.verification-content {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.verification-content.open {
+    max-height: 1000px; /* must be larger than content */
+    padding: 1rem;
+}
+
+.email-copy-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    background: var(--card-bg);
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+}
+
+.copy-btn {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+.copy-btn:hover {
+    opacity: 0.8;
+}
+
+.bmac-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #ffcc00;
+    color: #121212;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.bmac-btn:hover {
+    background-color: #e6b800;
+}
